@@ -181,6 +181,11 @@ def home(request):
 
     return render(request, 'hris/home.html',)
 
+def pds1(request):
+    employee = Employee.objects.get(user=request.user)
+
+    # Render the employee data using a template
+    return render(request, 'hris/pds1.html', {'employee': employee})
 
 
 def accountSettings(request):
@@ -452,11 +457,7 @@ def calculate_time_difference(time_in_str, time_out_str, break_in_str, break_out
             
         else:
             official_office_out = official_office_out_datetime.time()
-        
-
-
-
-              
+                
    
         if official_honorarium_time_in > time_object2 and official_honorarium_time_out > time_object2:
             official_honorarium_time_in = official_honorarium_time_in
@@ -1046,8 +1047,7 @@ def calculate_time_difference(time_in_str, time_out_str, break_in_str, break_out
         # tardiness_total_seconds= tardiness_total_hours.seconds % 3600
         # tardiness_total_minutes = tardiness_total_seconds.seconds  // 60
 
-        
-        
+          
         print(tardiness_total_hours,'tardiness_total_hours')
         print(type(tardiness_total_hours))
         print(tardiness_total_minutes,'tardiness_total_minutes')
@@ -1056,11 +1056,7 @@ def calculate_time_difference(time_in_str, time_out_str, break_in_str, break_out
         # print("tardiness is: " + tardiness_total_hours + " " + tardiness_total_minutes + " minutes and " + tardiness_total_seconds+" seconds" )
         print("-------------------------------------------")
 
-
-        
-
-
-            
+      
         return  tardiness_difference_hours_ot, tardiness_difference_minutes_ot,tardiness_difference_seconds_ot, tardiness_difference_hours_sc, tardiness_difference_minutes_sc, tardiness_difference_seconds_sc, tardiness_difference_hours_hn, tardiness_difference_minutes_hn, tardiness_difference_seconds_hn, tardiness_total_hours, tardiness_total_minutes, tardiness_total_seconds, difference_hours_hn, difference_minutes_hn, difference_seconds_hn, difference_hours_sc, difference_minutes_sc, difference_seconds_sc,difference_hours_ot, difference_minutes_ot, difference_seconds_ot,official_honorarium_time_in, official_honorarium_time_out, official_servicecredit_time_in, official_servicecredit_time_out, official_overtime_time_in, official_overtime_time_out, break_in1, break_out1, official_office_in_datetime,official_office_out_datetime, total_hours,total_minutes,total_seconds, day
     
 def search_records(request):
