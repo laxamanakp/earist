@@ -1,16 +1,10 @@
 <html>
-
-<div style="border: 1px solid black; padding: 0.25in; width: 8in; height: 12.5in;">
+<center>
+<div style="border: 1px solid black; padding: 0.25in; width: 8in; height: 13in;">
 <table style="border: 1px solid black; border-collapse: collapse; font-family: Arial, Helvetica, sans-serif; width: 8in; table-layout: fixed;">
     <tr>
         <td colspan="2" style="height: 0.1in; font-size: 72.5%;">
 			<b><i>CS Form No. 212</i></b>
-		</td>
-		<td colspan="1" style="height: 0.1in; font-size: 72.5%;">
-		</td>
-		<td colspan="1" style="height: 0.1in; font-size: 72.5%;">
-		</td>
-		<td colspan="1" style="height: 0.1in; font-size: 72.5%;">
 		</td>
 		<td colspan="1" style="height: 0.1in; font-size: 72.5%;">
 		</td>
@@ -70,30 +64,30 @@
         <td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px 1px 0px 1px solid black;">
 		2.&emsp;SURNAME
 		</td>
-		<td colspan="12" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">{{ employee.surname pip| upper }}</td>
+		<td colspan="12" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;{{ employee.surname | upper }}</td>
     </tr>
 	<tr>
 	    <td colspan="3" rowspan="2" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 0px 1px 0px 1px solid black;">
 		&emsp;&emsp;FIRST NAME
 		</td>
-		<td colspan="9" rowspan="2" style="height: 0.125in; font-size: 62.5%; border: 1px solid black;">&nbsp;</td>
+		<td colspan="9" rowspan="2" style="height: 0.125in; font-size: 62.5%; border: 1px solid black;">&nbsp;{{ employee.first_name| upper }}</td>
 		<td colspan="3" style="height: 0.125in; font-size: 62.5%; border: 1px 1px 0px 1px solid black; background-color:lightgray;"><sup>NAME EXTENSION (JR, SR)</sup></td>
     </tr>
 	<tr>
-		<td colspan="3" style="height: 0.125in; font-size: 62.5%; border: 0px 1px 1px 1px solid black; background-color:lightgray;"><sup>&nbsp;</sup></td>
+		<td colspan="3" style="height: 0.125in; font-size: 62.5%; border: 0px 1px 1px 1px solid black; background-color:lightgray;"><sup>&nbsp;{{ employee.name_ext| upper }}</sup></td>
     </tr>
 	<tr>
 		<td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 0px 1px 1px 1px solid black;">
 		&emsp;&emsp;MIDDLE NAME
 		</td>
-		<td colspan="12" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">{{employee.middle_name | upper}}</td>
+		<td colspan="12" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;{{employee.middle_name | upper}}</td>
     </tr>
 	<tr>
         <td colspan="3" rowspan="2" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		3.&emsp;DATE OF BIRTH<br>
 		<p>&emsp;&emsp;(mm/dd/yyyy)</p>
 		</td>
-		<td colspan="4" rowspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;</td>
+		<td colspan="4" rowspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;{{ employee.date_of_birth }}</td>
 		<td colspan="3" rowspan="4" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black; vertical-align: top;">
 			<br>
 			16.&emsp;CITIZENSHIP <br>
@@ -102,7 +96,7 @@
 			<br>
 			&emsp;&emsp;please indicate the details
 		</td>
-		<td colspan="5" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;</td>
+		<td colspan="5" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;{{ employee.citizenship | upper }}</td>
     </tr>
 	<tr>
 		<td colspan="5" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;</td>
@@ -111,13 +105,13 @@
         <td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		4.&emsp;PLACE OF BIRTH
 		</td>
-		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;</td>
+		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;{{ employee.place_of_birth | upper }}</td>
     </tr>
 	<tr>
         <td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		5.&emsp;SEX
 		</td>
-		<td colspan="5" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;</td>
+		<td colspan="5" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;{{ employee.sex | upper }}</td>
     </tr>
 	<tr>
         <td colspan="3" rowspan="4" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black; vertical-align: top;">
@@ -125,15 +119,18 @@
 		6.&emsp;CIVIL STATUS
 		</td>
 		<td colspan="4" rowspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-		&nbsp;
+		&nbsp;{{ employee.civil_status | upper }}
 		</td>
 		<td colspan="2" rowspan="6" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black black lightgray black; vertical-align: top;">
 		<br>
 		17.&emsp;RESIDENTIAL
 		&emsp;&emsp; ADDRESS
 		</td>
-		<td colspan="6" style="height: 0.15in; font-size: 62.5%; border: 1px solid black;">
-		&nbsp;
+		<td colspan="3" style="height: 0.15in;; font-size: 62.5%; border: 1px solid black; text-align: center;;">
+			&emsp;	{{ employee.residential_house_no | upper }}
+		</td>
+		<td colspan="3" style="height: 0.1in; font-size: 62.5%; border: 1px solid black; text-align: center;">
+			&emsp;	{{ employee.residential_street | upper }}
 		</td>
     </tr>
 	<tr>
@@ -145,7 +142,11 @@
 		</td>
 	</tr>
 	<tr>
-		<td colspan="6" style="height: 0.15in; font-size: 62.5%; border: 1px solid black;">
+		<td colspan="3" style="height: 0.15in;; font-size: 62.5%; border: 1px solid black; text-align: center;;">
+		&emsp;	{{ employee.residential_subd | upper }}
+		</td>
+		<td colspan="3" style="height: 0.1in; font-size: 62.5%; border: 1px solid black; text-align: center;">
+		&emsp;	{{ employee.residential_brgy | upper }}
 		</td>
 	</tr>
 	<tr>
@@ -161,9 +162,9 @@
 		7.&emsp;HEIGHT (m)
 		</td>
 		<td colspan="4" rowspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp;{{ employee.height_m | upper }}
 		</td>
-		<td colspan="6" style="height: 0.15in; font-size: 62.5%; border: 1px solid black;">&nbsp;</td>
+		<td colspan="6" style="height: 0.15in; font-size: 62.5%; border: 1px solid black; text-align: center;">&nbsp;{{ employee.residential_city | upper }}</td>
     </tr>
 	<tr>
 		<td colspan="3" style="height: 0.1in; font-size: 55%; border: 1px solid gray black black black; text-align: center;">
@@ -178,33 +179,34 @@
 		8.&emsp;WEIGHT (kg)
 		</td>
 		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp;{{ employee.weight_kg | upper }}
 		</td>
 		<td colspan="2" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black black gray black; text-align: center;">
 		ZIP CODE
 		</td>
-		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black; text-align: center; vertical-align: middle;">
+			&nbsp;{{ employee.residential_zipcode | upper }}
 		</td>
 	</tr>
-	
 	<tr>
         <td colspan="3" rowspan="2" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		9.&emsp;BLOOD TYPE
 		</td>
 		<td colspan="4" rowspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-		&nbsp;
+		&nbsp;{{ employee.blood_type| upper }}
 		</td>
 		<td colspan="2" rowspan="6" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black; vertical-align: top;">
 		<br>
 		18.&emsp;PERMANENT
 		&emsp;&emsp; ADDRESS
 		</td>
-		<td colspan="6" style="height: 0.15in; font-size: 62.5%; border: 1px solid black;">
-		&nbsp;
+		<td colspan="3" style="height: 0.15in;; font-size: 62.5%; border: 1px solid black; text-align: center;;">
+		&emsp;	{{ employee.residential_house_no| upper }}
+		</td>
+		<td colspan="3" style="height: 0.1in; font-size: 62.5%; border: 1px solid black; text-align: center;">
+		&emsp;	{{ employee.residential_street| upper }}
 		</td>
     </tr>
-	
 	<tr>
 		<td colspan="3" style="height: 0.1in; font-size: 55%; border: 1px solid gray white black black; text-align: center;">
 			<i>House/Block/Lot No.</i>
@@ -218,11 +220,13 @@
 		10.&emsp;GSIS ID NO.
 		</td>
 		<td colspan="4" rowspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-		&nbsp;
+		&nbsp;{{ employee.gsis_no| upper }}
 		</td>
-		<td colspan="6" style="height: 0.15in; font-size: 62.5%; border: 1px solid black;">
-		&nbsp;
+		<td colspan="3" style="height: 0.15in;; font-size: 62.5%; border: 1px solid black; text-align: center;;">
+		&emsp;	{{ employee.permanent_subd| upper }}
 		</td>
+		<td colspan="3" style="height: 0.1in; font-size: 62.5%; border: 1px solid black; text-align: center;">
+		&emsp;	{{ employee.permanent_brgy| upper }}
 	</tr>	
 	<tr>
 		<td colspan="3" style="height: 0.1in; font-size: 55%; border: 1px solid gray black black black; text-align: center;">
@@ -238,9 +242,14 @@
 		11.&emsp;PAG-IBIG ID NO.
 		</td>
 		<td colspan="4" rowspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp;{{ employee.pagibig_no | upper }}
 		</td>
-		<td colspan="6" style="height: 0.15in; font-size: 62.5%; border: 1px solid black;">&nbsp;</td>
+		<td colspan="3" style="height: 0.15in;; font-size: 62.5%; border: 1px solid black; text-align: center;;">
+			&emsp;	{{ employee.permanent_city| upper }}
+			</td>
+			<td colspan="3" style="height: 0.1in; font-size: 62.5%; border: 1px solid black; text-align: center;">
+			&emsp;	{{ employee.permanent_province| upper }}
+			</td>
     </tr>
 	
 	<tr>
@@ -257,13 +266,13 @@
 		12.&emsp;PHILHEALTH NO.
 		</td>
 		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp;{{ employee.philhealth_no | upper }}
 		</td>
 		<td colspan="2" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid gray black black black; text-align: center;">
 		ZIP CODE
 		</td>
-		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;text-align: center; vertical-align: middle;">
+			&nbsp;{{ employee.permanent_zipcode | upper }}
 		</td>
 	</tr>
 	<tr>
@@ -271,13 +280,13 @@
 		13.&emsp;SSS NO.
 		</td>
 		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp;{{ employee.sss_no | upper }}
 		</td>	
 		<td colspan="2" style="height: 0.25in; font-size: 57.5%; background-color:lightgray; border: 1px solid black;">
 		19.&emsp;TELEPHONE NO.
 		</td>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp;{{ employee.telephone | upper }}
 		</td>			
 	</tr>
 	<tr>
@@ -285,13 +294,13 @@
 		14.&emsp;TIN NO.
 		</td>
 		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp;{{ employee.tin_no  | upper }}
 		</td>	
 		<td colspan="2" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		20.&emsp;MOBILE NO.
 		</td>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp;{{ employee.mobile_number  | upper }}
 		</td>			
 	</tr>
 	<tr>
@@ -299,13 +308,13 @@
 		15.&emsp;AGENCY EMPLOYEE NO.
 		</td>
 		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp;{{ employee.agency_em | upper }}
 		</td>	
 		<td colspan="2" style="height: 0.25in; font-size: 45%; background-color:lightgray; border: 1px solid black;">
 		21. E-MAIL ADDRESS (if any)
 		</td>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp;{{ employee.email }}
 		</td>			
 	</tr>
 	<tr>
@@ -322,7 +331,7 @@
 		&emsp;&emsp; MIDDLE NAME
 		</td>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp;{{ employee.spouse_surname | upper }}
 		</td>
 		<td colspan="4" style="height: 0.25in; font-size: 52.5%; background-color:lightgray; border: 1px solid black;">
 		23. NAME of CHILDREN (Write full name and list all)
@@ -333,91 +342,98 @@
 		</td>		
     </tr>
 	<tr>
-		<td colspan="4" rowspan="2" style="height: 0.125in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" rowspan="2" style="height: 0.125in; font-size: 62.5%; border: 1px solid black; ">
+			&nbsp; {{employee.spouse_first_name | upper}}
 		</td>
 		<td colspan="2" style="height: 0.125in; font-size: 47.5%; background-color:lightgray; border: 1px 1px 0px 1px solid black;">
 			NAME EXTENSION (JR, SR)
 		</td>
-		<td colspan="4" rowspan="2" style="height: 0.125in; font-size: 52.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" rowspan="2" style="text-align: center; height: 0.125in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp;{{employee.children1_name | upper}}
 		</td>
-		<td colspan="2" rowspan="2" style="height: 0.125in; font-size: 52.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="2" rowspan="2" style="height: 0.125in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children1_BDAY | upper}}
 		</td>
 	</tr>
+
 	<tr>
 		<td colspan="2" style="height: 0.125in; font-size: 52.5%; background-color:lightgray; border: 0px 1px 1px 1px solid black;">
-			&nbsp;
+			&nbsp; 
 		</td>
+	
 	</tr>
 	<tr>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.spouse_middle_name | upper}}
 		</td>
-		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children2_name | upper}}
 		</td>
 		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.children2_BDAY | upper}}
 		</td>		
     </tr>
+
 	<tr>
 		<td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		OCCUPATION<br>
 		</td>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.spouse_occupation | upper}}
 		</td>
-		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children3_name | upper}}
 		</td>
 		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.children3_BDAY | upper}}
 		</td>		
     </tr>
+
 	<tr>
 		<td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		EMPLOYER/BUSINESS NAME<br>
 		</td>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.spouse_employer | upper}}
 		</td>
-		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" style=" text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children5_name | upper}}
 		</td>
 		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.children5_BDAY | upper}}
 		</td>		
     </tr>
+
 	<tr>
 		<td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		BUSINESS ADDRESS<br>
 		</td>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.spouse_business_address | upper}}
 		</td>
-		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children6_name | upper}}
 		</td>
 		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.children6_BDAY | upper}}
 		</td>		
     </tr>
+
 	<tr>
 		<td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		TELEPHONE NO.<br>
 		</td>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.spouse_telephone | upper}}
 		</td>
-		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children7_name | upper}}
 		</td>
 		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.children7_BDAY | upper}}
 		</td>		
     </tr>
+
 	<tr>
 		<td colspan="3" rowspan="4" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		24. FATHER'S SURNAME<br>
@@ -427,56 +443,61 @@
 		&emsp;&emsp;MIDDLE NAME
 		</td>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.father_surname | upper}}
 		</td>
-		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children8_name | upper}}
 		</td>
 		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.children8_BDAY | upper}}
 		</td>		
     </tr>
+
 	<tr>
 		<td colspan="4" rowspan="2" style="height: 0.125in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.father_first_name | upper}}
 		</td>
 		<td colspan="2" style="height: 0.125in; font-size: 47.5%; background-color:lightgray; border: 1px 1px 0px 1px solid black;">
 			NAME EXTENSION (JR, SR)
 		</td>
-		<td colspan="4" rowspan="2" style="height: 0.125in; font-size: 52.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" rowspan="2" style="text-align: center; height: 0.125in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children9_name | upper}}
 		</td>
-		<td colspan="2" rowspan="2" style="height: 0.125in; font-size: 52.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="2" rowspan="2" style="height: 0.125in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children9_BDAY | upper}}
 		</td>
 	</tr>
+
 	<tr>
 		<td colspan="2" style="height: 0.125in; font-size: 52.5%; background-color:lightgray; border: 0px 1px 1px 1px solid black;">
-			&nbsp;
+			&nbsp; 
 		</td>
 	</tr>
+
 	<tr>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.father_middle_name | upper}}
 		</td>
-		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children10_name | upper}}
 		</td>
 		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.children10_BDAY | upper}}
 		</td>		
     </tr>
+
 	<tr>
 		<td colspan="9" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px 1px 0px 1px solid black;">
 		25. MOTHER'S MAIDEN NAME
 		</td>
-		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children11_name | upper}}
 		</td>
 		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.children11_BDAY | upper}}
 		</td>		
     </tr>	
+
 	<tr>
 		<td colspan="3" rowspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 0px 1px 1px 1px solid black;">
 		SURNAME<br>
@@ -486,29 +507,29 @@
 		MIDDLE NAME
 		</td>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.mother_surname | upper}}
 		</td>
-		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children12_name | upper}}
 		</td>
 		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.children12_BDAY | upper}}
 		</td>		
     </tr>
 	<tr>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.mother_first_name | upper}}
 		</td>
-		<td colspan="4" style="height: 0.25in; font-size: 52.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="4" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children4_name | upper}}
 		</td>
-		<td colspan="2" style="height: 0.25in; font-size: 52.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.children4_BDAY | upper}}
 		</td>
 	</tr>
 	<tr>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.mother_middle_name | upper}}
 		</td>
 		<td colspan="6" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; color:red; border: 1px solid black; text-align: center;">
 			<b><i>(Continue on separate sheet if necessary)</i></b>
@@ -521,10 +542,10 @@
     </tr>
 	<tr>
 		<td colspan="1" rowspan="2" style="height: 0.3in; font-size: 62.5%; background-color:lightgray; border: 1px 1px 1px 0px solid black;">
-			26.
+			26. LEVEL
 		</td>
 		<td colspan="2" rowspan="2" style="height: 0.3in; font-size: 62.5%; background-color:lightgray; border: 1px 0px 1px 1px solid black; text-align: center;">
-			LEVEL
+			
 		</td>
 		<td colspan="3" rowspan="2" style="height: 0.3in; font-size: 52.5%; background-color:lightgray; border: 1px solid black; text-align: center;">
 			NAME OF SCHOOL<br>
@@ -566,130 +587,130 @@
 		<td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		ELEMENTARY<br>
 		</td>
-		<td colspan="3" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="3" style=" text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.ELEMENTARY | upper}}
 		</td>
-		<td colspan="3" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="3" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.ELEMENTARY_BASIC_EDUCATION_DEGREE_COURSE | upper}}
 		</td>
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="1" style="height: 0.25in; font-size: 50.5%; border: 1px solid black;">
+			&nbsp; {{employee.ELEMENTARY_PERIOD_OF_ATTENDANCE_FROM | upper}}
 		</td>
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="1" style="height: 0.25in; font-size: 50.5%; border: 1px solid black;">
+			&nbsp; {{employee.ELEMENTARY_PERIOD_OF_ATTENDANCE_TO | upper}}
 		</td>	
-		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
-		</td>	
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="2" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.ELEMENTARY_HIGHEST_LEVEL_UNITS_EARNED | upper}}
 		</td>	
 		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.ELEMENTARY_YEAR_GRADUATED | upper}}
+		</td>	
+		<td colspan="1" style="height: 0.25in; font-size: 30.5%; border: 1px solid black;">
+			&nbsp; {{employee.ELEMENTARY_SCHOLARSHIP_ACADEMIC_HONORS_RECEIVED | upper}}
 		</td>			
     </tr>
 	<tr>
 		<td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		SECONDARY<br>
 		</td>
-		<td colspan="3" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="3" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.SECONDARY | upper}}
 		</td>
-		<td colspan="3" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="3" style=" text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.SECONDARY_BASIC_EDUCATION_DEGREE_COURSE | upper}}
 		</td>
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="1" style="height: 0.25in; font-size: 50.5%; border: 1px solid black;">
+			&nbsp; {{employee.SECONDARY_PERIOD_OF_ATTENDANCE_FROM | upper}}
 		</td>
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="1" style="height: 0.25in; font-size: 50.5%; border: 1px solid black;">
+			&nbsp; {{employee.SECONDARY_PERIOD_OF_ATTENDANCE_TO | upper}}
 		</td>	
-		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
-		</td>	
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="2" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.SECONDARY_HIGHEST_LEVEL_UNITS_EARNED | upper}}
 		</td>	
 		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
-		</td>			
+			&nbsp; {{employee.SECONDARY_YEAR_GRADUATED | upper}}
+		</td>	
+		<td colspan="1" style="height: 0.25in; font-size: 30.5%; border: 1px solid black;">
+			&nbsp; {{employee.SECONDARY_SCHOLARSHIP_ACADEMIC_HONORS_RECEIVED | upper}}
+		</td>			 
     </tr>
 	<tr>
 		<td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		VOCATIONAL/TRADE COURSE<br>
 		</td>
-		<td colspan="3" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="3" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.VOCATIONAL | upper}}
 		</td>
-		<td colspan="3" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="3" style=" text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.VOCATIONAL_BASIC_EDUCATION_DEGREE_COURSE | upper}}
 		</td>
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="1" style="height: 0.25in; font-size: 50.5%; border: 1px solid black;">
+			&nbsp; {{employee.VOCATIONAL_PERIOD_OF_ATTENDANCE_FROM | upper}}
 		</td>
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="1" style="height: 0.25in; font-size: 50.5%; border: 1px solid black;">
+			&nbsp; {{employee.VOCATIONAL_PERIOD_OF_ATTENDANCE_TO | upper}}
 		</td>	
-		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
-		</td>	
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="2" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.VOCATIONAL_HIGHEST_LEVEL_UNITS_EARNED | upper}}
 		</td>	
 		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.VOCATIONAL_YEAR_GRADUATED | upper}}
+		</td>	
+		<td colspan="1" style="height: 0.25in; font-size: 30.5%; border: 1px solid black;">
+			&nbsp; {{employee.VOCATIONAL_SCHOLARSHIP_ACADEMIC_HONORS_RECEIVED | upper}}
 		</td>			
     </tr>
 	<tr>
 		<td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		COLLEGE<br>
 		</td>
-		<td colspan="3" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="3" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.COLLEGE | upper}}
 		</td>
-		<td colspan="3" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="3" style=" text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.COLLEGE_BASIC_EDUCATION_DEGREE_COURSE | upper}}
 		</td>
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="1" style="height: 0.25in; font-size: 50.5%; border: 1px solid black;">
+			&nbsp; {{employee.COLLEGE_PERIOD_OF_ATTENDANCE_FROM | upper}}
 		</td>
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="1" style="height: 0.25in; font-size: 50.5%; border: 1px solid black;">
+			&nbsp; {{employee.COLLEGE_PERIOD_OF_ATTENDANCE_TO | upper}}
 		</td>	
-		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
-		</td>	
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="2" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.COLLEGE_HIGHEST_LEVEL_UNITS_EARNED | upper}}
 		</td>	
 		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
-		</td>			
+			&nbsp; {{employee.COLLEGE_YEAR_GRADUATED | upper}}
+		</td>	
+		<td colspan="1" style=" text-align: center; height: 0.25in; font-size: 30.5%; border: 1px solid black;">
+			&nbsp; {{employee.COLLEGE_SCHOLARSHIP_ACADEMIC_HONORS_RECEIVED | upper}}
+		</td>			 
     </tr>
 	<tr>
 		<td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
 		GRADUATE STUDIES<br>
 		</td>
-		<td colspan="3" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="3" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.GRADUATE | upper}}
 		</td>
-		<td colspan="3" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="3" style=" text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.GRADUATE_BASIC_EDUCATION_DEGREE_COURSE | upper}}
 		</td>
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="1" style="height: 0.25in; font-size: 50.5%; border: 1px solid black;">
+			&nbsp; {{employee.GRADUATE_PERIOD_OF_ATTENDANCE_FROM | upper}}
 		</td>
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="1" style="height: 0.25in; font-size: 50.5%; border: 1px solid black;">
+			&nbsp; {{employee.GRADUATE_PERIOD_OF_ATTENDANCE_TO | upper}}
 		</td>	
-		<td colspan="2" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
-		</td>	
-		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+		<td colspan="2" style="text-align: center; height: 0.25in; font-size: 62.5%; border: 1px solid black;">
+			&nbsp; {{employee.GRADUATE_HIGHEST_LEVEL_UNITS_EARNED | upper}}
 		</td>	
 		<td colspan="1" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.GRADUATE_YEAR_GRADUATED | upper}}
+		</td>	
+		<td colspan="1" style="height: 0.25in; font-size: 30.5%; border: 1px solid black;">
+			&nbsp; {{employee.GRADUATE_SCHOLARSHIP_ACADEMIC_HONORS_RECEIVED | upper}}
 		</td>			
     </tr>
 	<tr>
@@ -708,7 +729,7 @@
 		<b><i>DATE<i></b>
 		</td>
 		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;
+			&nbsp; {{employee.DATE_OF_FILLUP | upper}}
 		</td>		
     </tr>
 	<tr>
@@ -718,4 +739,36 @@
 	</tr>
 </table>
 </div>
+
+
+<style>
+    .pagination a {
+      color: black;
+      float: center;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color .3s;
+    }
+
+    .pagination a.active {
+      background-color: dodgerblue;
+      color: white;
+    }
+
+    .pagination a:hover:not(.active) {
+	   background-color: #ddd;
+	}
+    </style>
+
+    <div class="pagination">
+
+	</br>
+    <a class="active" href="{% url 'pds1' %}">1</a></li>
+    <a href="{% url 'pds2' %}">2</a></li>
+    <a href="{% url 'pds3' %}">3</a></li>
+    <a href="{% url 'pds4' %}">4</a></li>
+	<a href="{% url 'account' %}">Profile</a>
+    </br>
+    </div>
+  
 </html>

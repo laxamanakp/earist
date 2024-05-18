@@ -22,6 +22,9 @@ urlpatterns = [
         path('official_time/', views.official_time_view, name='official_time'),
         path('edit-logs/', views.edit_logs, name='edit_logs'),
         path('pds1/', views.pds1, name='pds1'),
+        path('pds2/', views.pds2, name='pds2'),
+        path('pds3/', views.pds3, name='pds3'),
+        path('pds4/', views.pds4, name='pds4'),
 
 ]
 # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -187,6 +187,24 @@ def pds1(request):
     # Render the employee data using a template
     return render(request, 'hris/pds1.html', {'employee': employee})
 
+def pds2(request):
+    employee = Employee.objects.get(user=request.user)
+
+    # Render the employee data using a template
+    return render(request, 'hris/pds2.html', {'employee': employee})
+
+def pds3(request):
+    employee = Employee.objects.get(user=request.user)
+
+    # Render the employee data using a template
+    return render(request, 'hris/pds3.html', {'employee': employee})
+
+def pds4(request):
+    employee = Employee.objects.get(user=request.user)
+
+    # Render the employee data using a template
+    return render(request, 'hris/pds4.html', {'employee': employee})
+
 
 def accountSettings(request):
     employee = request.user.employee
